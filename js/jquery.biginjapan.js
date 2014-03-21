@@ -77,13 +77,8 @@ data-biginjapan-excludeitemfromheight : false / jquery selector
 
   $.fn.biginjapan.resize = function(){
 
-    if (typeof window.innerWidth != 'undefined') {
-      var _w = window.innerWidth,
-      _h = window.innerHeight;
-    } else {
-      var _w = document.documentElement.clientWidth,
-      _h = document.documentElement.clientHeight;
-    }
+    var _w = $(window).width(),
+    _h = $(window).height();
 
     for(var i=0;i<$.fn.biginjapan.wrappers.length;i++){
       var e = $.fn.biginjapan.wrappers[i];
