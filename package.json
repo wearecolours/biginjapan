@@ -1,0 +1,20 @@
+{
+  "name": "biginjapan",
+  "description": "Match the height of an element to the height of the browser window.",
+  "version": "1.0.0",
+  "author": "Ivar Borthen",
+  "style": "css/biginjapan.css",
+  "main": "js/jquery.biginjapan.js",
+  "keywords": [
+    "jquery",
+    "full-height-container"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wearecolours/jquery.biginjapan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wearecolours/jquery.biginjapan/issues"
+  },
+  "license": "MIT"
+}
