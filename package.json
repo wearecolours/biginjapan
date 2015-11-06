@@ -1,11 +1,13 @@
 {
   "name": "biginjapan",
   "description": "Match the height of an element to the height of the browser window.",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "author": "Ivar Borthen",
   "main": "js/jquery.biginjapan.js",
   "keywords": [
     "jquery",
+    "vanillajs",
+    "javascript",
     "full-height-container"
   ],
   "repository": {
