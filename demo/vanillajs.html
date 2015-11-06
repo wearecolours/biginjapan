@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>DEMO - biginjapan.js</title>
+	</head>
+
+	<body style="margin:0;">
+		<!-- Big-in-japan combined with easyloop and inyourface -->
+		<div>
+	    	<div data-biginjapan=true style="background-color: lightgreen">
+				covers site 100% of window height
+	    	</div>
+	    	<div data-biginjapan=true data-biginjapan-percentheight="0.5" style="background-color: lightblue">
+	    	 	<div data-biginjapan=true data-biginjapan-percentheight="0.5" data-biginjapan-isincontainer=true style="background-color: pink">
+	    	 		inside a 50% of window element, scaled to 50% of parent
+	    	 	</div>
+	    	 	<div data-biginjapan=true data-biginjapan-percentheight="0.5" data-biginjapan-isincontainer=true style="background-color: green">
+	    	 		inside a 50% of window element, scaled to 50% of parent
+	    	 	</div>
+	    	</div>
+		</div>
+
+	    <!-- Load scripts -->
+	   	<script src="biginjapan.js"></script>
+	</body>
+</html>
