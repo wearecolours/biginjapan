@@ -14,8 +14,8 @@ npm install biginjapan --save
 Add biginjapan.js to the bottom of the `<body>` like this:
 
 ```html
-		<script src="biginjapan.js"></script>
-	</body>
+	<script src="biginjapan.js"></script>
+</body>
 ```
 
 
