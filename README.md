@@ -1,6 +1,29 @@
+### What it is
+
+biginjapan.js sets the height of an element based on the height of the browser window.
+
+
 ### Installation:
 
-`npm install biginjapan --save`
+biginjapan.js is available as an [npm package](https://www.npmjs.com/package/biginjapan).
+
+```
+npm install biginjapan --save
+```
+
+Add biginjapan.js to the bottom of the `<body>` like this:
+
+```html
+		<script src="biginjapan.js"></script>
+	</body>
+```
+
+
+### Usage
+
+```html
+<div data-biginjapan="true"></div>
+```
 
 
 ### Options
@@ -13,8 +36,12 @@ Options can be passed via data attributes. Append the option name to `data-bigin
 | exclude    | selector | false   | A valid CSS selector of an element you want biginjapan to exclude from it's height. |
 
 
-### Usage
+### Browser Support
 
-```html
-<div data-biginjapan="true"></div>
-```
+Coming soon
+
+
+### License
+
+The code is available under the [MIT License](https://github.com/cferdinandi/smooth-scroll/blob/master/LICENSE.md).
+
