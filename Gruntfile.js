@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 		browserSync: {
 			bsFiles: {
 				src : [
-					'demo/jquery.biginjapan.js'
+					'demo/biginjapan.js'
 				]
 			},
 			options: {

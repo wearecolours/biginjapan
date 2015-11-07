@@ -1,5 +1,5 @@
 /* ========================================================================
- * github.com/wearecolours/jquery.biginjapan 
+ * github.com/wearecolours/jquery.biginjapan
  * ========================================================================
  * Copyright 2015 Ivar Borthen.
  * No dependencies needed.
@@ -12,8 +12,8 @@ data-biginjapan=true : inits biginjapan. (Autostarts)
 
 Optional:
 data-biginjapan-isincontainer : use true if respect container - default uses browser viewport
-data-biginjapan-percentheight : (0-1) % of height of biginjapan - default is 1 (100%)
-data-biginjapan-excludeitemfromheight : false / jquery selector
+data-biginjapan-percentage : (0-1) % of height of biginjapan - default is 1 (100%)
+data-biginjapan-exclude : false / CSS selector
 
 Pause it:
 BigInJapan.pause();
@@ -45,8 +45,8 @@ function biginjapan() {
       this.wrappers[i] = {
         el : _el[i],
         isincontainer : _el[i].dataset.biginjapanIsincontainer,
-        excludeitemsfromheight : _el[i].dataset.biginjapanExcludeitemsfromheight,
-        percentheight : _el[i].dataset.biginjapanPercentheight === undefined ? 1 : Number(_el[i].dataset.biginjapanPercentheight)
+        exclude : _el[i].dataset.biginjapanExclude,
+        percentage : _el[i].dataset.biginjapanPercentage === undefined ? 1 : Number(_el[i].dataset.biginjapanPercentage)
       }
       if(this.wrappers[i].isincontainer){
         this.wrappers[i].myparent = this.wrappers[i].el.parentNode;
@@ -64,14 +64,14 @@ function biginjapan() {
     }
     for(var i=0;i<this.wrappers.length;i++){
       var e = this.wrappers[i];
-      var c = this.excludeitemfromheight(e.excludeitemsfromheight);
+      var c = this.excludeitemfromheight(e.exclude);
       if(e.isincontainer){
         console.log(this.returnWidthOfSingleElement(e.myparent));
         e.el.style.width = (this.returnWidthOfSingleElement(e.myparent)) + 'px';
-        e.el.style.height = ((this.returnHeightOfSingleElement(e.myparent)-c)*e.percentheight) + 'px';
+        e.el.style.height = ((this.returnHeightOfSingleElement(e.myparent)-c)*e.percentage) + 'px';
       } else {
         e.el.style.width = (myWidth) + 'px';
-        e.el.style.height = ((myHeight-c)*e.percentheight) + 'px';
+        e.el.style.height = ((myHeight-c)*e.percentage) + 'px';
       }
     }
   }

@@ -1,0 +1,29 @@
+* {
+	box-sizing: border-box;
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: yellow;
+}
+
+.header,
+.container {
+	text-align: center;
+	padding: 20px;
+}
+
+.container {
+	border-top: 3px solid red;
+}
+
+.container-1 {
+	background-color: lightgreen;
+}
+
+.container-2 {
+	background-color: lightblue;
+}

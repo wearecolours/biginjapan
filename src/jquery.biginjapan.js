@@ -12,8 +12,8 @@ data-biginjapan=true : inits biginjapan.
 
 Optional:
 data-biginjapan-isincontainer : use true if respect container - default uses browser viewport
-data-biginjapan-percentheight : (0-1) % of height of biginjapan - default is 1 (100%)
-data-biginjapan-excludeitemfromheight : false / jquery selector
+data-biginjapan-percentage : (0-1) % of height of biginjapan - default is 1 (100%)
+data-biginjapan-exclude : false / CSS selector
 
 */
 
@@ -53,8 +53,8 @@ data-biginjapan-excludeitemfromheight : false / jquery selector
       $.fn.biginjapan.wrappers[i] = {
        el : $this,
        isincontainer : isincontainer,
-       excludeitemsfromheight : $this.data('biginjapan-excludeitemsfromheight'),
-       percentheight : $this.data('biginjapan-percentheight') === undefined ? 1 : Number($this.data('biginjapan-percentheight'))
+       exclude : $this.data('biginjapan-exclude'),
+       percentage : $this.data('biginjapan-percentage') === undefined ? 1 : Number($this.data('biginjapan-percentage'))
       }
       if(isincontainer==true){
         $.fn.biginjapan.wrappers[i].myparent = $this.parent();
@@ -82,11 +82,11 @@ data-biginjapan-excludeitemfromheight : false / jquery selector
 
     for(var i=0;i<$.fn.biginjapan.wrappers.length;i++){
       var e = $.fn.biginjapan.wrappers[i];
-      var c = $.fn.biginjapan.excludeitemfromheight(e.excludeitemsfromheight);
+      var c = $.fn.biginjapan.excludeitemfromheight(e.exclude);
       if(e.isincontainer==true){
-        e.el.css({ 'width':e.myparent.width(), 'height':(e.myparent.height()-c)*e.percentheight });
+        e.el.css({ 'width':e.myparent.width(), 'height':(e.myparent.height()-c)*e.percentage });
       } else {
-        e.el.css({ 'width':_w, 'height':(_h-c)*e.percentheight });
+        e.el.css({ 'width':_w, 'height':(_h-c)*e.percentage });
       }
     }
   }
