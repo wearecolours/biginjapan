@@ -1,3 +1,5 @@
+@import "https://necolas.github.io/normalize.css/3.0.2/normalize.css";
+
 * {
 	box-sizing: border-box;
 }
@@ -7,23 +9,47 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	background-color: yellow;
+	z-index: 2;
+	background-color: rgba(0,0,0,0.6);
+	color: #fff;
 }
 
 .header,
-.container {
+p {
 	text-align: center;
 	padding: 20px;
 }
 
+p {
+	background-color: rgba(255,255,255,0.7);
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	right: 0;
+}
+
 .container {
-	border-top: 3px solid red;
+	position: relative;
 }
 
 .container-1 {
-	background-color: lightgreen;
+	/* http://lea.verou.me/css3patterns/#cross */
+	background:
+	radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent),
+	radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent) 50px 50px,
+	linear-gradient(#A8B1BB 8px, transparent 8px) 0 -4px,
+	linear-gradient(90deg, #A8B1BB 8px, transparent 8px) -4px 0;
+	background-color: slategray;
+	background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
 }
 
 .container-2 {
-	background-color: lightblue;
+	/* http://lea.verou.me/css3patterns/#waves */
+	background:
+	radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+	radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
+	background-color: darkred;
+	background-size:75px 100px;
 }

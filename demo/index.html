@@ -2,17 +2,16 @@
 <html>
 	<head>
 		<title>DEMO - jquery.biginjapan.js</title>
-		<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="demo.css" />
 	</head>
 	<body>
-
 		<div id="header" class="header">Fixed header</div>
-
-		<div class="container container-1" data-biginjapan="true" data-biginjapan-exclude="#header">100% of window height</div>
-
-		<div class="container container-2" data-biginjapan="true" data-biginjapan-percentage="0.5">50% of window height</div>
-
+		<div class="container container-1" data-biginjapan="true" data-biginjapan-exclude="#header">
+			<p>100% of window height and excluding fixed header</p>
+		</div>
+		<div class="container container-2" data-biginjapan="true" data-biginjapan-percentage="0.5">
+			<p>50% of window height</p>
+		</div>
 		<script src="biginjapan.js"></script>
 	</body>
 </html>
