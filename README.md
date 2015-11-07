@@ -3,7 +3,7 @@
 biginjapan.js sets the height of an element based on the height of the browser window.
 
 
-### Installation:
+### Installation
 
 biginjapan.js is available as an [npm package](https://www.npmjs.com/package/biginjapan).
 
@@ -11,10 +11,10 @@ biginjapan.js is available as an [npm package](https://www.npmjs.com/package/big
 npm install biginjapan --save
 ```
 
-Add biginjapan.js to the bottom of the `<body>` like this:
+Add **biginjapan.min.js** to the bottom of the `<body>` like this:
 
 ```html
-	<script src="biginjapan.js"></script>
+	<script src="biginjapan.min.js"></script>
 </body>
 ```
 
