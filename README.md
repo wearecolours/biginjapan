@@ -36,6 +36,13 @@ Options can be passed via data attributes. Append the option name to `data-bigin
 | exclude    | selector | false   | A valid CSS selector of an element you want biginjapan to exclude from it's height. |
 
 
+### Events
+| Event Type | Description                  |
+|------------|------------------------------|
+| update     | Run after DOM has changed    |
+| pause      | Pauses resize event listener |
+
+
 ### Browser Support
 
 Coming soon
