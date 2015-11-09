@@ -27,13 +27,12 @@ var BigInJapan = (function () {
 
   function biginjapan() {
     this.wrappers = [];
-    this.paused = true;
   }
 
   biginjapan.prototype.update = function(){
 
     this.getElements();
-    if (window.addEventListener && this.paused === true) {
+    if (window.addEventListener && this.paused === undefined) {
       window.addEventListener('resize', this.calculateHeights.bind(this), false);
     }
     this.paused = false;
