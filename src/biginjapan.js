@@ -19,7 +19,7 @@ Pause it:
 BigInJapan.pause();
 
 Update it:
-BigInJapan.start();
+BigInJapan.update();
 
 */
 
@@ -30,7 +30,7 @@ var BigInJapan = (function () {
     this.paused = true;
   }
 
-  biginjapan.prototype.start = function(){
+  biginjapan.prototype.update = function(){
 
     this.getElements();
     if (window.addEventListener && this.paused === true) {
@@ -141,7 +141,7 @@ var BigInJapan = (function () {
 
   }
 
-  biginjapan.prototype.start();
+  biginjapan.prototype.update();
   return biginjapan.prototype;
 
 }());
