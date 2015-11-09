@@ -8,7 +8,6 @@ module.exports = function(grunt) {
 		uglify: {
 			dist: {
 				files: {
-					'dist/jquery.biginjapan.min.js': ['src/jquery.biginjapan.js'],
 					'dist/biginjapan.min.js': ['src/biginjapan.js']
 				}
 			}
@@ -45,7 +44,6 @@ module.exports = function(grunt) {
 		watch: {
 			js: {
 				files: [
-					'src/jquery.biginjapan.js',
 					'src/biginjapan.js'
 				],
 				tasks: ['copy']
