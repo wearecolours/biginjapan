@@ -83,16 +83,16 @@ function biginjapan() {
     _el = [];
     // should we improve on this?
     if(_elements.indexOf('#')===0){
-      _el = document.getElementById(_elements) !== null ? document.getElementById(_elements) : []; // return empty if no such #ID elements in DOM.
+      _el = document.getElementById(_elements.slice(1)) !== null ? [document.getElementById(_elements.slice(1))] : []; // return empty if no such #ID elements in DOM.
     } else if(_elements.indexOf('.')===0){
-      _el = document.getElementsByClassName(_elements);
-    } else if(indexOf('data')===0){
-      _el = document.querySelectorAll(_elements);
+      _el = document.getElementsByClassName(_elements.slice(1));
+    } else if(_elements.indexOf('<')===0){
+      _el = document.getElementsByTagName((_elements.slice(1)).slice(0, -1));
     } else {
-      _el = document.getElementsByTagName(_elements);
+      _el = document.querySelectorAll(_elements);
     }
     for(var i=0; i<_el.length; i++){
-      _excludeheight += returnHeightOfSingleElement(_el[i]);
+      _excludeheight += this.returnHeightOfSingleElement(_el[i]);
     }
     return _excludeheight;
   }
@@ -105,7 +105,6 @@ function biginjapan() {
         elmHeight = parseInt(document.defaultView.getComputedStyle(_element, '').getPropertyValue('height'));
         elmMargin = parseInt(document.defaultView.getComputedStyle(_element, '').getPropertyValue('margin-top')) + parseInt(document.defaultView.getComputedStyle(_element, '').getPropertyValue('margin-bottom'));
     }
-    console.log(elmHeight, elmMargin);
     return (elmHeight+elmMargin);
   }
   this.returnWidthOfSingleElement = function(_element) {

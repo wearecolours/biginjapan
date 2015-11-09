@@ -4,7 +4,14 @@
 	box-sizing: border-box;
 }
 
+html {
+	overflow-x : hidden;
+}
+body {
+	padding-top : 100px;
+}
 .header {
+	height : 100px;
 	position: fixed;
 	top: 0;
 	left: 0;
