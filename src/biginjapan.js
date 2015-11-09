@@ -18,27 +18,35 @@ data-biginjapan-exclude : false / CSS selector
 Pause it:
 BigInJapan.pause();
 
-Start or Update it:
+Update it:
 BigInJapan.start();
 
 */
 
-function biginjapan() {
-  this.wrappers = [];
-  this.start = function(){
+var BigInJapan = (function () {
+
+  function biginjapan() {
+    this.wrappers = [];
+    this.paused = true;
+  }
+
+  biginjapan.prototype.start = function(){
+
     this.getElements();
-    this.pause(); // dont make to many event
-    if (window.addEventListener) {
+    if (window.addEventListener && this.paused === true) {
       window.addEventListener('resize', this.calculateHeights.bind(this), false);
     }
+    this.paused = false;
     this.calculateHeights();
+
   };
-  this.pause = function(){
-    if (window.removeEventListener) {
-        window.removeEventListener('resize', this.calculateHeights);
-    }
+
+  biginjapan.prototype.pause = function(){
+    this.paused = true;
   };
-  this.getElements = function(){
+
+  biginjapan.prototype.getElements = function(){
+
     var _el = document.querySelectorAll('[data-biginjapan]');
     this.wrappers = [];
     for(var i=0, l=_el.length; i<l; i++){
@@ -52,8 +60,13 @@ function biginjapan() {
         this.wrappers[i].myparent = this.wrappers[i].el.parentNode;
       }
     }
+
   };
-  this.calculateHeights = function(){
+
+  biginjapan.prototype.calculateHeights = function(){
+
+    if(this.paused) return false;
+
     var myWidth, myHeight;
     if (document.compatMode === 'BackCompat') {
         myHeight = document.body.clientHeight;
@@ -75,7 +88,9 @@ function biginjapan() {
       }
     }
   }
-  this.excludeitemfromheight = function(_elements){
+
+  biginjapan.prototype.excludeitemfromheight = function(_elements){
+
     if(!_elements){
       return 0;
     }
@@ -95,8 +110,11 @@ function biginjapan() {
       _excludeheight += this.returnHeightOfSingleElement(_el[i]);
     }
     return _excludeheight;
+
   }
-  this.returnHeightOfSingleElement = function(_element) {
+
+  biginjapan.prototype.returnHeightOfSingleElement = function(_element) {
+
     var elmHeight, elmMargin;
     if(document.all) {// IE
         elmHeight = parseInt(_element.currentStyle.height);
@@ -106,21 +124,24 @@ function biginjapan() {
         elmMargin = parseInt(document.defaultView.getComputedStyle(_element, '').getPropertyValue('margin-top')) + parseInt(document.defaultView.getComputedStyle(_element, '').getPropertyValue('margin-bottom'));
     }
     return (elmHeight+elmMargin);
+
   }
-  this.returnWidthOfSingleElement = function(_element) {
+
+  biginjapan.prototype.returnWidthOfSingleElement = function(_element) {
+
     var elmWidth, elmMargin;
-    if(document.all) {// IE
+    if(document.all) { // IE
         elmWidth = parseInt(_element.currentStyle.width);
         elmMargin = parseInt(_element.currentStyle.marginLeft, 10) + parseInt(_element.currentStyle.marginRight, 10);
-    } else {// Mozilla
+    } else { // Mozilla
         elmWidth = parseInt(document.defaultView.getComputedStyle(_element, '').getPropertyValue('width'));
         elmMargin = parseInt(document.defaultView.getComputedStyle(_element, '').getPropertyValue('margin-left')) + parseInt(document.defaultView.getComputedStyle(_element, '').getPropertyValue('margin-right'));
     }
     return (elmWidth+elmMargin);
+
   }
-  return this.prototype;
-}
 
+  biginjapan.prototype.start();
+  return biginjapan.prototype;
 
-var BigInJapan = new biginjapan();
-BigInJapan.start();
+}());
