@@ -1,5 +1,5 @@
 /* ========================================================================
- * github.com/wearecolours/jquery.biginjapan
+ * github.com/wearecolours/biginjapan
  * ========================================================================
  * Copyright 2015 Ivar Borthen.
  * No dependencies needed.

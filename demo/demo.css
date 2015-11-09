@@ -8,10 +8,10 @@ html {
 	overflow-x : hidden;
 }
 body {
-	padding-top : 100px;
+	padding-top : 60px;
 }
 .header {
-	height : 100px;
+	height : 60px;
 	position: fixed;
 	top: 0;
 	left: 0;
