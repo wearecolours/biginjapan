@@ -66,23 +66,18 @@ var BigInJapan = (function () {
 
     if(this.paused) return false;
 
-    var myWidth, myHeight;
+    var myHeight;
     if (document.compatMode === 'BackCompat') {
         myHeight = document.body.clientHeight;
-        myWidth = document.body.clientWidth;
     } else {
         myHeight = document.documentElement.clientHeight;
-        myWidth = document.documentElement.clientWidth;
     }
     for(var i=0;i<this.wrappers.length;i++){
       var e = this.wrappers[i];
       var c = this.excludeitemfromheight(e.exclude);
       if(e.isincontainer){
-        console.log(this.returnWidthOfSingleElement(e.myparent));
-        e.el.style.width = (this.returnWidthOfSingleElement(e.myparent)) + 'px';
         e.el.style.height = ((this.returnHeightOfSingleElement(e.myparent)-c)*e.percentage) + 'px';
       } else {
-        e.el.style.width = (myWidth) + 'px';
         e.el.style.height = ((myHeight-c)*e.percentage) + 'px';
       }
     }
@@ -123,20 +118,6 @@ var BigInJapan = (function () {
         elmMargin = parseInt(document.defaultView.getComputedStyle(_element, '').getPropertyValue('margin-top')) + parseInt(document.defaultView.getComputedStyle(_element, '').getPropertyValue('margin-bottom'));
     }
     return (elmHeight+elmMargin);
-
-  }
-
-  biginjapan.prototype.returnWidthOfSingleElement = function(_element) {
-
-    var elmWidth, elmMargin;
-    if(document.all) { // IE
-        elmWidth = parseInt(_element.currentStyle.width);
-        elmMargin = parseInt(_element.currentStyle.marginLeft, 10) + parseInt(_element.currentStyle.marginRight, 10);
-    } else { // Mozilla
-        elmWidth = parseInt(document.defaultView.getComputedStyle(_element, '').getPropertyValue('width'));
-        elmMargin = parseInt(document.defaultView.getComputedStyle(_element, '').getPropertyValue('margin-left')) + parseInt(document.defaultView.getComputedStyle(_element, '').getPropertyValue('margin-right'));
-    }
-    return (elmWidth+elmMargin);
 
   }
 
