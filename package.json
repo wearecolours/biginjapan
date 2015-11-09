@@ -1,7 +1,7 @@
 {
   "name": "biginjapan",
   "description": "Match the height of an element to the height of the browser window.",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "author": "Ivar Borthen",
   "main": "dist/biginjapan.min.js",
   "keywords": [
