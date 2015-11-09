@@ -37,10 +37,11 @@ Options can be passed via data attributes. Append the option name to `data-bigin
 
 
 ### Events
-| Event Type | Description                  |
-|------------|------------------------------|
-| update     | Run after DOM has changed    |
-| pause      | Pauses resize event listener |
+
+| Function                | Description                  |
+|-------------------------|------------------------------|
+| BigInJapan.update()     | Run after DOM has changed    |
+| BigInJapan.pause()      | Pauses resize event listener |
 
 
 ### Browser Support
