@@ -3,7 +3,7 @@
   "description": "Match the height of an element to the height of the browser window.",
   "version": "1.1.0",
   "author": "Ivar Borthen",
-  "main": "js/jquery.biginjapan.js",
+  "main": "dist/biginjapan.min.js",
   "keywords": [
     "jquery",
     "full-height-container"
