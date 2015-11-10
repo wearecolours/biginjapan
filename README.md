@@ -22,7 +22,7 @@ Add **biginjapan.min.js** to the bottom of the `<body>` like this:
 ### Usage
 
 ```html
-<div data-biginjapan="true"></div>
+<div data-biginjapan></div>
 ```
 
 
