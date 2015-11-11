@@ -35,7 +35,7 @@
 
 	// We do not want this script to be applied in browsers that do not support those
 	// That means no bigInJapan on IE9 and below.
-	if(document.querySelectorAll === void 0 || window.pageYOffset === void 0 || history.pushState === void 0) { return; }
+	if( document.querySelectorAll === void 0 ) { return; }
 
 	var bigInJapan = function() {
 
