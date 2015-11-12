@@ -1,8 +1,9 @@
 /* ========================================================================
+ * biginjapan.js v2.1.6
  * https://github.com/wearecolours/biginjapan
  * ========================================================================
- * Copyright 2015 Ivar Borthen, Christopher Horgen
- * No dependencies needed.
+ * Copyright 2013-2015 Ivar Borthen, Christopher Horgen
+ * Licensed under MIT (https://github.com/wearecolours/biginjapan/blob/master/LICENSE)
  * ======================================================================== */
 
 (function (window, bigInJapan) {
@@ -29,31 +30,35 @@
 	}
 
 })(window, function(){
-
 	'use strict';
 
 	// We do not want this script to be applied in browsers that do not support those
 	// That means no bigInJapan on IE9 and below.
 	if( document.querySelectorAll === void 0 ) { return; }
 
+
+	var elements = null;
+
 	var bigInJapan = function() {
-
-		window.addEventListener('resize', update, false);
-
 		update();
 
+		window.addEventListener('resize', resize, false);
 	}
 
 	var update = function() {
+		// Get all elements with [data-biginjapan]
+		elements = document.querySelectorAll('[data-biginjapan]');
 
-		var elements = document.querySelectorAll('[data-biginjapan]');
+		resize();
+	}
+
+	var resize = function() {
 
 		for( var i = 0; i < elements.length; i++ ){
 
 			var exclude = elements[i].dataset.biginjapanExclude;
 			if ( exclude !== undefined ) {
 
-				/*** NEED WRAPPER (pre calculate all the exclude height elements) ***/
 				var excludeElements = document.querySelectorAll(exclude);
 				var excludeHeight = 0;
 				for ( var j = 0; j < excludeElements.length; j++ ) {
@@ -67,7 +72,11 @@
 			elements[i].style.height = ((window.innerHeight * (percentage / 100)) - excludeHeight) + 'px';
 		}
 	}
-	
+
 	document.addEventListener("DOMContentLoaded", bigInJapan);
 
+	// Return public functions
+	return {
+		update
+	};
 });
