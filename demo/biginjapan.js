@@ -29,22 +29,24 @@
 	}
 
 })(window, function(){
-	'use strict';
 
-	var elements = null;
+	'use strict';
 
 	// We do not want this script to be applied in browsers that do not support those
 	// That means no bigInJapan on IE9 and below.
-	if(document.querySelectorAll === void 0 || window.pageYOffset === void 0 || history.pushState === void 0) { return; }
+	if( document.querySelectorAll === void 0 ) { return; }
 
 	var bigInJapan = function() {
 
-		elements = document.querySelectorAll('[data-biginjapan]');
+		window.addEventListener('resize', update, false);
 
 		update();
+
 	}
 
-	var update = function(event) {
+	var update = function() {
+
+		var elements = document.querySelectorAll('[data-biginjapan]');
 
 		for( var i = 0; i < elements.length; i++ ){
 
@@ -65,12 +67,7 @@
 			elements[i].style.height = ((window.innerHeight * (percentage / 100)) - excludeHeight) + 'px';
 		}
 	}
-
-
-	window.addEventListener('resize', update, false);
-
+	
 	document.addEventListener("DOMContentLoaded", bigInJapan);
 
-	// return bigInJapan API
-	return bigInJapan;
 });
