@@ -51,5 +51,5 @@ Coming soon
 
 ### License
 
-The code is available under the [MIT License](https://github.com/cferdinandi/smooth-scroll/blob/master/LICENSE.md).
+The code is available under the [MIT License](https://github.com/wearecolours/biginjapan/blob/master/LICENSE.md).
 
